@@ -9,7 +9,7 @@ print(lista1[1])
 # Python le da la vuelta a los numeros negati vos, los transforma apositivos
 # pero ademas comienza a recorrer la lista de derecha a izquierda
 # comenzando con el ultimo valor en -1
-print(lista1[-0])
+print(lista1[-1])
 
 # imprimir multitud de valores concretos
 print(lista1[0:2])
