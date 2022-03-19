@@ -9,7 +9,7 @@ def mensaje(men):
 mensaje(men)
 
 def suma():
-    varr = 3++4
+    varr = 3+4
     print(varr)
 
 suma()
