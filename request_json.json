@@ -3,24 +3,13 @@
     "curso": "Python APIs", 
     "nombre": "Alan"
   }, 
-  "data": "{\"dato1\": \"brazil\", \"dato2\": 34, \"dato3\": \"rusia\"}", 
-  "files": {}, 
-  "form": {}, 
   "headers": {
     "Accept": "*/*", 
     "Accept-Encoding": "gzip, deflate", 
-    "Access-Token": "E1234E", 
-    "Content-Length": "50", 
-    "Content-Type": "application/json", 
     "Host": "httpbin.org", 
     "User-Agent": "python-requests/2.25.1", 
-    "X-Amzn-Trace-Id": "Root=1-62379ea4-370adb5d6404a6b44aff3c1b"
-  }, 
-  "json": {
-    "dato1": "brazil", 
-    "dato2": 34, 
-    "dato3": "rusia"
+    "X-Amzn-Trace-Id": "Root=1-6237dea3-5ab30f5c131668e7796b5421"
   }, 
   "origin": "186.79.201.245", 
-  "url": "http://httpbin.org/delete?nombre=Alan&curso=Python+APIs"
+  "url": "http://httpbin.org/get?nombre=Alan&curso=Python+APIs"
 }

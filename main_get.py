@@ -1,4 +1,7 @@
-from pydoc import resolve
+"""
+En esta request 'GEt' los datos de la request de respuesta son diferentes
+a la de la request 'POST'
+"""
 import requests
 
 """

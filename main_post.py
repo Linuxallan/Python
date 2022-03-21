@@ -1,3 +1,7 @@
+"""
+En esta request 'POST' los datos de la request de respuesta son diferentes
+a la de la request 'GET'
+"""
 import json
 import requests
 
