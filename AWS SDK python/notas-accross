@@ -1,0 +1,5 @@
+Rol Account A : SDK-lambda-assumed-role-to-account-B
+Policy Name : SDK-assumed-rol-to-account-b-policy
+
+Rol Account B : SDK-lambda-assumed-role-from-account-A
+
