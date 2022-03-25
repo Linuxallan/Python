@@ -14,6 +14,9 @@ cloud = "myhuaweicloud.com"
 AK = "URTVVDPSFIMWFZ5BRO5X"
 SK = "zT8znL8fd2RkgFU1CDJWnflgod36LK9802TsZ8GX"
 
+# Me encontre esta URL de BSS, creo que es la que se usa como API.
+# https://bss.example.com/v1.0
+
 if __name__ == '__main__':
     conn = connection.Connection(
         auth_url=auth_url,
