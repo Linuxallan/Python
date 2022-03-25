@@ -2,7 +2,7 @@ from openstack import connection
 import sys
 import json
 from openstack import utils
-utils.enable_logging(debug=True,stream=sys.stdout)
+utils.enable_logging(debug=False,stream=sys.stdout)
 
 username = "acortes"
 password = "huame82gus_"
@@ -21,9 +21,9 @@ if __name__ == '__main__':
     conn = connection.Connection(
         auth_url=auth_url,
         user_domain_id=userDomainId,
-        domain_id=userDomainId,
-        username=username,
-        password=password,
+        #domain_id=userDomainId,
+        #username=username,
+        #password=password,
         cloud = cloud,
         #region = region,
         ak = AK,
@@ -38,7 +38,7 @@ if __name__ == '__main__':
         "type": "1"
     }
     response = conn.bssintl.query_monthly_expenditure_summary(userDomainId, **data)
-    print(response)
+    print("RESPONSE: ",response)
     """
 
     """ 2 No funciona
@@ -48,8 +48,8 @@ if __name__ == '__main__':
     }
     try:
 
-        ff = conn.bssintl.query_partner_monthly_bills(userDomainId, **data)
-        print(ff)
+        response = conn.bssintl.query_partner_monthly_bills(userDomainId, **data)
+        print("Res:",response)
     except Exception as error:
-        print(error)
+        print("Error: ", error)
     

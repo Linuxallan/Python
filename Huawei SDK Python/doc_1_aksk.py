@@ -1,7 +1,7 @@
 from openstack import connection
 import sys
 from openstack import utils
-utils.enable_logging(debug=True,stream=sys.stdout)
+utils.enable_logging(debug=False,stream=sys.stdout)
 
 projectId = "0ebece24a100900c2f66c01d85051860"
 cloud = "myhuaweicloud.com"
