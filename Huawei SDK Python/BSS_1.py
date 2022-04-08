@@ -56,7 +56,7 @@ if __name__ == '__main__':
     """
 
     """ 2 No funciona
-    """
+    
     data = {
         "consume_month": "2022-02"
     }
@@ -67,17 +67,22 @@ if __name__ == '__main__':
     except Exception as error:
         print("Error: ", error)
     
+    """
     
+    url = "https://bss-intl.myhuaweicloud.com/v1.0//partner/account-mgr/postpaid-bill-summary?consume_month=2022-02"
     """
     url = "https://bss-intl.myhuaweicloud.com/v2/bills/partner-bills/postpaid-bill-summary?bill_cycle=2022-02"
+    // curl --location --request GET 'https://bss-intl.myhuaweicloud.com/v1.0//partner/account-mgr/postpaid-bill-summary?consume_month=2022-02'
     headers = {'Content-Type': 'application/json', 'Access-Token':'', 'X-Auth-Token':''}
+    """
+    headers = {'Content-Type': 'application/json', 'charset':'', 'utf8':''}
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
         print(response.content)
     else:
         print("GET No")
-    """
+    
 
 
 
