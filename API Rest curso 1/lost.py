@@ -1,3 +1,12 @@
+"""
+Me surge un error por que al re leer el archivo json que queda mal escrito
+despues de registrar datos, este arroja una error, solo eso.
+
+1. Subir una capa de desarrollo: hacer la capa contenedora de la cadena json
+que se va agregando en cada registro.
+--> hacer: "[ "1": { ... }, "2": { ...}]"
+--> probar en una grafico en web que funcione el json total de los datos
+"""
 import json
 
 lista_datos = []
