@@ -13,34 +13,55 @@ lista_datos = []
 
 def leerjson():
 
-    f = open('lost_datos.json')
-    data = json.load(f)
-    f.close()
+    try:
+        f = open('lost_datos.json')
+        data = json.load(f)
+        f.close()
 
-    return data
+        return data
+    except Exception as error:
+        print("Error: No datos en el json: (exception) ", error)
+        vasio = []
+        return vasio
 
-def jsonFormat(lista):  
+def jsonFormat(data, lista):  
 
-    dicc = {'a': lista[0], 'b': lista[1], "c": lista[2], 'd': lista[3], 'e': lista[4], 'f': lista[5]}
-    json_listo = json.dumps(dicc)
+    try:
+        indice = len(data.items()) +1
+        
+    except Exception as error:
+        indice = 1
+
+    json_temp = json.dumps(lista)
+    json_listo = '"'+str(indice)+'"' + ':' + json_temp
 
     return json_listo
+    
 
 def imprimir_json(data, jjson):
 
-    ddata = json.dumps(data)
-    f = ddata + ',' + jjson
+    f = ""
+    if(len(data)== 0):
+        f = '{' + jjson + '}'
+    else:
+        ddata = json.dumps(data)
+
+        dddata = ddata.replace('}', '')
+        
+        f = dddata + ',' + jjson + '}'
+
     file = open('lost_datos.json', 'wb')
     file.write(f.encode())
     file.close()    
 
 while (True):
 
-    data = leerjson()
+    data = leerjson()        
 
     count = 1
     tempo_datos = []
     print("-----------------------------------------------------")
+    print("-----------------------CHEKED------------------------")
     print("-----------------------------------------------------")
 
     while count <= 6:
@@ -51,44 +72,42 @@ while (True):
         tempo_datos.append(num)
         count = count + 1
     
-    json_listo = jsonFormat(tempo_datos)
+    json_listo = jsonFormat(data, tempo_datos)
 
     imprimir_json(data, json_listo)
 
 
 
 """
-y = 1
-while y <= 7000:
-    print("-----------------------------------------------------")
-    print("-----------------------------------------------------")
-    print("Ingrese numero")
-    num = input()
-    lista_datos.append(num)
-
-
-lista_json = []
-largo = len(lista_datos)//7
-
-cont = 0
-for valor in range(largo):
-
-    cadena = ""
-    for value in range(7):
-        print(value)
-        v = lista_datos[cont]
-        if value == 6:
-            cadena = cadena + "|{}".format(v)
-        else:
-            cadena = cadena + "{}".format(v) + ","
-        cont = cont + 1
-
-    lista_json.append(cadena)
-"""
+    #for key in data.values():  IMPRIMIR CADENA DE NUMEROS
+    #for key in data.keys():    IMPRIMIR INDICE
+    for key in data.items():
+        
+        #val = data[key]
+        #print(val)
+        print(key)
+    """
 
 
 """
-"numbers": [
+{
+    "1": [
+        12,
+        34,
+        21,
+        1,
+        5,
+        33
+    ],
+    "2": [
+        ...
+        ...
+        ...
+    ]
+}
+"""
+"""
+{
     "1": {
         "a": 12,
         "b": 34,
@@ -102,7 +121,7 @@ for valor in range(largo):
         ...
         ...
     }
-]
+}
 """
 
 """
